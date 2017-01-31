@@ -1,0 +1,31 @@
+ 
+ <div class="row">
+ <% @listings.each do |listing| %>
+ <div class="col-xs-8 col-md-8">
+  <H2><%= listing.title %></H2>
+   <div class="thumbnail">
+    <%= link_to image_tag(listing.image.url), listing %>
+
+   
+        
+        
+        
+        
+        
+        <% link_to 'Show', listing %>
+        <% link_to 'Edit', edit_listing_path(listing) %>
+        <% link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+   
+       
+  </div>
+  <%= listing.content %>
+
+ 
+
+  </div>
+<% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Listing', new_listing_path %>
